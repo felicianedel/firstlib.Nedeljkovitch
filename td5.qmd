@@ -1,0 +1,16 @@
+---
+title: "td5"
+format: html
+editor: visual
+---
+```{r}
+df_velo <- readr::read_delim("244400404_comptages-velo-nantes-metropole (1).csv", delim = ";")
+```
+
+```{r}
+usethis::use_data(df_velo, overwrite = TRUE)
+```
+```{r}
+devtools::load_all()
+```
+
