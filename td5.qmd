@@ -21,4 +21,11 @@ devtools::document()
 devtools::load_all()
 ?df_velo
 ```
+```{r}
+devtools::document()
+```
+```{r}
+devtools::load_all()
+filtrer_trajet(df_velo, c("880", "881"))
+```
 
