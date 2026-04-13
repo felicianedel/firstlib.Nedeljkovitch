@@ -76,3 +76,12 @@ plot_distribution_semaine <- function(df){
     col = "royalblue"
   )
 }
+#' Filtrer les trajets par boucle
+#'
+#' @param df Un data.frame.
+#' @param boucles Un vecteur de numeros de boucle.
+#' @return Un data.frame filtre.
+#' @export
+filtrer_trajet <- function(df, boucles) {
+  df[as.character(df$Numero.de.boucle) %in% as.character(boucles), , drop = FALSE]
+}

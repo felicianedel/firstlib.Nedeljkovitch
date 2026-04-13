@@ -22,3 +22,11 @@ devtools::load_all()
 ?df_velo
 ```
 
+# question 12 - TEST
+```{r}
+usethis::use_testthat()
+```
+```{r}
+usethis::use_test("velo")
+```
+
