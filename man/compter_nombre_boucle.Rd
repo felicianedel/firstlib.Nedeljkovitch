@@ -2,19 +2,16 @@
 % Please edit documentation in R/velo.R
 \name{compter_nombre_boucle}
 \alias{compter_nombre_boucle}
-\title{Compter le nombre de boucles de comptage}
+\title{Compter le nombre de boucles}
 \usage{
 compter_nombre_boucle(df)
 }
 \arguments{
-\item{df}{Un data.frame contenant les trajets vélos avec les colonnes suivantes :
-\describe{
-\item{Boucle.de.comptage}{Identifiant ou nom de la boucle de comptage}
-}}
+\item{df}{Un data.frame.}
 }
 \value{
-Un entier correspondant au nombre de boucles uniques.
+Un entier.
 }
 \description{
-Cette fonction calcule le nombre de boucles de comptage distinctes.
+Compter le nombre de boucles
 }

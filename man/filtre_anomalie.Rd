@@ -7,15 +7,11 @@
 filtre_anomalie(df)
 }
 \arguments{
-\item{df}{Un data.frame contenant les trajets vélos avec les colonnes suivantes :
-\describe{
-\item{Probabilité.de.présence.d.anomalies}{Niveau d'anomalie ("Faible", "Forte", etc.)}
-}}
+\item{df}{Un data.frame.}
 }
 \value{
-Un data.frame sans les observations présentant des anomalies faibles ou fortes.
+Un data.frame filtre.
 }
 \description{
-Cette fonction filtre les lignes correspondant aux anomalies faibles ou fortes
-dans un jeu de données de trajets vélo.
+Supprime les lignes avec anomalies faibles ou fortes.
 }

@@ -2,24 +2,16 @@
 % Please edit documentation in R/velo.R
 \name{calcul_distribution_semaine}
 \alias{calcul_distribution_semaine}
-\title{Calculer la distribution des trajets par jour de la semaine}
+\title{Distribution par jour}
 \usage{
 calcul_distribution_semaine(df)
 }
 \arguments{
-\item{df}{Un data.frame contenant les trajets vélos avec les colonnes suivantes :
-\describe{
-\item{Jour.de.la.semaine}{Jour de la semaine}
-\item{Total}{Nombre de passages}
-}}
+\item{df}{Un data.frame.}
 }
 \value{
-Un data.frame contenant :
-\describe{
-\item{Jour.de.la.semaine}{Jour de la semaine}
-\item{nb_trajets}{Nombre total de trajets}
-}
+Un data.frame.
 }
 \description{
-Cette fonction calcule le nombre total de trajets pour chaque jour de la semaine.
+Distribution par jour
 }

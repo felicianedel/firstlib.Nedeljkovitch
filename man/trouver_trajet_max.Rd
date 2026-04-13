@@ -2,26 +2,16 @@
 % Please edit documentation in R/velo.R
 \name{trouver_trajet_max}
 \alias{trouver_trajet_max}
-\title{Trouver le trajet avec le maximum de passages}
+\title{Trouver le trajet maximum}
 \usage{
 trouver_trajet_max(df)
 }
 \arguments{
-\item{df}{Un data.frame contenant les trajets vélos avec les colonnes suivantes :
-\describe{
-\item{Total}{Nombre de passages}
-\item{Boucle.de.comptage}{Nom de la boucle}
-\item{Jour}{Jour du relevé}
-}}
+\item{df}{Un data.frame.}
 }
 \value{
-Un data.frame avec les colonnes :
-\describe{
-\item{nom}{Nom de la boucle de comptage}
-\item{jour}{Jour correspondant}
-\item{nb_passage}{Nombre maximal de passages}
-}
+Un data.frame.
 }
 \description{
-Cette fonction identifie le trajet ayant le plus grand nombre de passages.
+Trouver le trajet maximum
 }

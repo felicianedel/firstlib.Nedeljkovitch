@@ -2,21 +2,16 @@
 % Please edit documentation in R/velo.R
 \name{plot_distribution_semaine}
 \alias{plot_distribution_semaine}
-\title{Représenter la distribution hebdomadaire des trajets}
+\title{Plot distribution}
 \usage{
 plot_distribution_semaine(df)
 }
 \arguments{
-\item{df}{Un data.frame contenant les trajets vélos avec les colonnes suivantes :
-\describe{
-\item{Jour.de.la.semaine}{Jour de la semaine}
-\item{Total}{Nombre de passages}
-}}
+\item{df}{Un data.frame.}
 }
 \value{
-Un objet graphique (barplot).
+Un graphique.
 }
 \description{
-Cette fonction génère un graphique en barres représentant le nombre
-de trajets par jour de la semaine.
+Plot distribution
 }

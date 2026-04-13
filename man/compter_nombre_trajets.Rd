@@ -2,19 +2,16 @@
 % Please edit documentation in R/velo.R
 \name{compter_nombre_trajets}
 \alias{compter_nombre_trajets}
-\title{Compter le nombre total de trajets}
+\title{Compter le nombre de trajets}
 \usage{
 compter_nombre_trajets(df)
 }
 \arguments{
-\item{df}{Un data.frame contenant les trajets vélos avec les colonnes suivantes :
-\describe{
-\item{Total}{Nombre de passages enregistrés}
-}}
+\item{df}{Un data.frame.}
 }
 \value{
-Un entier correspondant au nombre total de trajets.
+Un entier.
 }
 \description{
-Cette fonction calcule le nombre total de trajets.
+Compter le nombre de trajets
 }
