@@ -1,51 +1,44 @@
 #' Filtrer les anomalies
 #'
-#' Supprime les lignes avec anomalies faibles ou fortes.
-#'
 #' @param df Un data.frame.
 #' @return Un data.frame filtre.
 #' @export
-filtre_anomalie <- function(df){
-  df_filtre <- df[!(df$Probabilite.de.presence.d.anomalies %in% c("Faible", "Forte")), ]
-  return(df_filtre)
+filtre_anomalie <- function(df) {
+  df[!(df$`Probabilité de présence d'anomalies` %in% c("Faible", "Forte")), , drop = FALSE]
 }
-
 
 #' Compter le nombre de trajets
 #'
 #' @param df Un data.frame.
 #' @return Un entier.
 #' @export
-compter_nombre_trajets <- function(df){
-  return(sum(df$Total, na.rm = TRUE))
+compter_nombre_trajets <- function(df) {
+  sum(df$Total, na.rm = TRUE)
 }
-
 
 #' Compter le nombre de boucles
 #'
 #' @param df Un data.frame.
 #' @return Un entier.
 #' @export
-compter_nombre_boucle <- function(df){
-  return(length(unique(df$Boucle.de.comptage)))
+compter_nombre_boucle <- function(df) {
+  length(unique(df$`Boucle de comptage`))
 }
-
 
 #' Trouver le trajet maximum
 #'
 #' @param df Un data.frame.
 #' @return Un data.frame.
 #' @export
-trouver_trajet_max <- function(df){
+trouver_trajet_max <- function(df) {
   max_id <- which.max(df$Total)
 
   data.frame(
-    nom = df$Boucle.de.comptage[max_id],
+    nom = df$`Boucle de comptage`[max_id],
     jour = df$Jour[max_id],
     nb_passage = df$Total[max_id]
   )
 }
-
 
 #' Distribution par jour
 #'
@@ -54,12 +47,11 @@ trouver_trajet_max <- function(df){
 #' @importFrom dplyr group_by summarise
 #' @importFrom rlang .data
 #' @export
-calcul_distribution_semaine <- function(df){
+calcul_distribution_semaine <- function(df) {
   df |>
-    dplyr::group_by(.data$Jour.de.la.semaine) |>
+    dplyr::group_by(.data[["Jour de la semaine"]]) |>
     dplyr::summarise(nb_trajets = sum(.data$Total, na.rm = TRUE))
 }
-
 
 #' Plot distribution
 #'
@@ -67,15 +59,15 @@ calcul_distribution_semaine <- function(df){
 #' @return Un graphique.
 #' @importFrom graphics barplot
 #' @export
-plot_distribution_semaine <- function(df){
-
-  barplot(
-    tapply(df$Total, df$Jour.de.la.semaine, sum, na.rm = TRUE),
+plot_distribution_semaine <- function(df) {
+  graphics::barplot(
+    tapply(df$Total, df$`Jour de la semaine`, sum, na.rm = TRUE),
     xlab = "Jour",
     ylab = "Nombre",
     col = "royalblue"
   )
 }
+
 #' Filtrer les trajets par boucle
 #'
 #' @param df Un data.frame.
@@ -83,5 +75,11 @@ plot_distribution_semaine <- function(df){
 #' @return Un data.frame filtre.
 #' @export
 filtrer_trajet <- function(df, boucles) {
-  df[as.character(df$Numero.de.boucle) %in% as.character(boucles), , drop = FALSE]
+
+  # Cas TDD : si NULL → on retourne tout
+  if (is.null(boucles)) {
+    return(df)
+  }
+
+  df[as.character(df$`Numéro de boucle`) %in% as.character(boucles), , drop = FALSE]
 }

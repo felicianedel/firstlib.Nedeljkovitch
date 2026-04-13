@@ -13,5 +13,5 @@ filtre_anomalie(df)
 Un data.frame filtre.
 }
 \description{
-Supprime les lignes avec anomalies faibles ou fortes.
+Filtrer les anomalies
 }

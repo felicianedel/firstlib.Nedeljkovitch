@@ -29,4 +29,7 @@ usethis::use_testthat()
 ```{r}
 usethis::use_test("velo")
 ```
+```{r}
+covr::report()
+```
 
