@@ -13,4 +13,12 @@ usethis::use_data(df_velo, overwrite = TRUE)
 ```{r}
 devtools::load_all()
 ```
+```{r}
+df_velo
+```
+```{r}
+devtools::document()
+devtools::load_all()
+?df_velo
+```
 
